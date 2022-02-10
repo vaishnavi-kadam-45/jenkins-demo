@@ -1,0 +1,16 @@
+pipeline{
+  agent any
+  stages{
+    stage("Install apache"){
+      steps{
+        sh 'sudo yum install httpd -y'
+        sh 'sudo service httpd start'
+      }
+    }
+    stage("Deployment"){
+    steps{
+     sh 'sudo cp * /var/www/html/'
+    }
+    }
+  }
+}
