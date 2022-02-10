@@ -1,0 +1,22 @@
+pipeline
+{
+agent any
+  stages{
+    stage("Install Apache"){
+      steps{
+       sh 'sudo apt install apache2 -y'
+      }
+    stage("Install git"){
+      steps{
+      sh 'sudo apt install git'
+      }
+   }
+    }
+  }
+  stage("Deploy"){
+  steps{
+   sh '''sudo cp -R * /var/www/html/
+      sudo chmod R 777 /var/www/html '''
+  }
+  }
+}
