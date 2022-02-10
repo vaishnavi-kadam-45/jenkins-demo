@@ -8,9 +8,6 @@ agent any
       steps{
        sh 'sudo apt install apache2 -y'
       }
-      steps{
-    sh 'sudo apt install git'
-    }
       }
      }
     }
