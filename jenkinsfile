@@ -2,15 +2,20 @@ pipeline
 {
 agent any
   stages{
+    stage("INstall somthing"){
+    parallel {
     stage("Install Apache"){
       steps{
        sh 'sudo apt install apache2 -y'
       }
+      }
+     }
+    }
     stage("Get My code"){
       steps{
-git branch: 'main', credentialsId: '82bd8dc4-40e9-426d-a858-a74bee253b21', url: 'https://github.com/vaishnavi-kadam-45/jenkins-demo.git'      }
+git{credentialsId: '82bd8dc4-40e9-426d-a858-a74bee253b21', url: 'https://github.com/vaishnavi-kadam-45/jenkins-demo.git'}
    }
-    }
+    
   }
   stage("Deploy"){
   steps{
