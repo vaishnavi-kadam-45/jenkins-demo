@@ -3,14 +3,14 @@ pipeline
 agent any
   stages{
     stage("INstall git"){
-    steps{
-    sh 'sudo apt install git'
-    }
     parallel {
     stage("Install Apache"){
       steps{
        sh 'sudo apt install apache2 -y'
       }
+      steps{
+    sh 'sudo apt install git'
+    }
       }
      }
     }
