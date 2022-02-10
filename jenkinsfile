@@ -6,10 +6,9 @@ agent any
       steps{
        sh 'sudo apt install apache2 -y'
       }
-    stage("Install git"){
+    stage("Get My code"){
       steps{
-      sh 'sudo apt install git'
-      }
+git branch: 'main', credentialsId: '82bd8dc4-40e9-426d-a858-a74bee253b21', url: 'https://github.com/vaishnavi-kadam-45/jenkins-demo.git'      }
    }
     }
   }
