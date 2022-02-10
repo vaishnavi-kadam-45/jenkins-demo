@@ -13,7 +13,7 @@ agent any
     }
     stage("Get My code"){
       steps{
-git{credentialsId: '82bd8dc4-40e9-426d-a858-a74bee253b21', url: 'https://github.com/vaishnavi-kadam-45/jenkins-demo.git'}
+git { credentialsId: '82bd8dc4-40e9-426d-a858-a74bee253b21', url: 'https://github.com/vaishnavi-kadam-45/jenkins-demo.git' }
    }
     
   }
