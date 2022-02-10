@@ -15,7 +15,7 @@ agent any
   stage("Deploy"){
   steps{
    sh '''sudo cp -R * /var/www/html/
-      sudo chmod R 777 /var/www/html '''
+      sudo chmod -R 777 /var/www/html '''
   }
   }
 }
